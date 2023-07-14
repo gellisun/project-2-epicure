@@ -1,5 +1,18 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
+
+<h2> user.name </h2>
 
 
 
-<%- include('./partials/footer') %>
+<% if (isLoggedInHasPosts) { %>
+    <h3> <%= post.title %> </h3>
+    <p><%= post.description %> </p>
+    <img src="<%= post.photo %>" alt="post-photos">
+    <form action="">
+        <button>ADD Content</button>
+    </form>
+<% } else { %>
+    <h3>No posts yet, start uploading!</h3>
+ <% } %>
+
+<%- include('../partials/footer') %>

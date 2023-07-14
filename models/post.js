@@ -4,9 +4,14 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     title: { type: String, required: true},
     description: { type: String, required: true},
-    fileName: String,
+    photo: String,
     link: String,
-    content: String
+    content: String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
   }, {
     timestamps: true
   });
