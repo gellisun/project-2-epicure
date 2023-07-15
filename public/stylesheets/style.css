@@ -1,20 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #e3cb08;
-}
-
-a, h1 {
-  color: #5f5d58;
-}
-
-.login {
+  padding: 3vmin;
+  font-family: 'Pathway Extreme', sans-serif;
+  background-color: rgb(247, 212, 127);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.login .logout .add-content {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  height: 34px;
 }
 
 .login img {
   height: 30px;
+}
+
+a, h1, h2, h3, h4, p, label {
+  color: #5f5d58;
+}
+
+h1 {
+  align-self: center;
+}
+
+li {
+  list-style-type: circle;
+}
+
+/* Form */
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #b2906f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #c8a397;
+}
+
+.form-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    padding: 10vmin;
+    font-family: 'Pathway Extreme', sans-serif;
+    background-color: rgb(247, 212, 127);
+  }
+  
+  a, h1, h2, h3, h4, p {
+    color: #5f5d58;
+  }
+  
+  .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+  }
+  
+  .login img {
+    height: 30px;
+  }
 }

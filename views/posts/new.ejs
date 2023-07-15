@@ -1,16 +1,18 @@
 <%- include('../partials/header') %>
 
+<div class="form-container">
 <form id="new-form" action="/posts" method="POST">
   <label>Title:</label>
-  <input type="text" name="title" required>
+  <input type="text" name="title" placeholder="Give a title..." required>
   <label>Brief description:</label>
-  <input type="text" name="description" required>
+  <input type="text" name="description" placeholder="Brief description..." required>
   <label>Upload restaurant link here:</label>
-  <input type="text" name="link">
+  <input type="text" name="link" placeholder="Add a link...">
   <label>Blog it:</label>
-  <input type="text" name="content">
+  <textarea type="text" name="content" placeholder="Write something..."></textarea>
   <input type="submit" value="Add Content">
 </form>
+</div>
 
 <p>
   <%= errorMsg %>
