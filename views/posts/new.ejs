@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/posts" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" required>
+  <label>Brief description:</label>
+  <input type="text" name="description" required>
+  <label>Upload restaurant link here:</label>
+  <input type="text" name="link">
+  <label>Blog it:</label>
+  <input type="text" name="content">
+  <input type="submit" value="Add Content">
+</form>
+
+<p>
+  <%= errorMsg %>
+</p>
+
+<%- include('../partials/footer') %>
