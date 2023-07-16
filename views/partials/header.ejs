@@ -13,8 +13,6 @@
   <nav>
     <% if (user) { %>
       <a href="/logout" class="logout">LOG OUT</a>
-      <a href="/posts/new" class="add-content">
-        ADD Content</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>

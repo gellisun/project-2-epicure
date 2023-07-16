@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const methodOverride = require('method-override');
+
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
@@ -27,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(methodOverride('_method'));
 app.use(session({
   secret: process.env.SECRET,
   resave: false,

@@ -20,7 +20,7 @@ body {
   height: 30px;
 }
 
-a, h1, h2, h3, h4, p, label {
+a, h1, h2, h3, h4, h5, p, label {
   color: #5f5d58;
 }
 
@@ -30,6 +30,20 @@ h1 {
 
 li {
   list-style-type: circle;
+}
+
+#details-btn {
+  text-decoration: none;
+}
+
+#edit-btn, #update-btn, #delete-btn {
+  background-color: #b2906f;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
 }
 
 /* Form */

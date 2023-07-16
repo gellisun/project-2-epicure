@@ -19,14 +19,18 @@ function newPost(req, res) {
 async function create(req, res) {
     try {
       const { title, description, link, content } = req.body;
+      const user = req.user;
+      if (!user) {
+        return res.redirect('/login');
+      }
+
       const newPost = new Post({
         title,
         description,
         link,
         content,
-        user: req.user._id
+        user: user._id
       });
-      console.log(newPost);
       await newPost.save();
       res.redirect('/posts');
     } catch (err) {
@@ -34,10 +38,66 @@ async function create(req, res) {
       res.redirect('/');
     }
   }
-  
+
+async function show(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    res.render('posts/show', {post});
+  } catch(err) {
+    console.log(err);
+    res.redirect('/posts');
+  }
+}
+
+async function edit(req, res) {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+      // Handle the case when the post is not found
+      // For example, redirect to an error page or display an error message
+      return res.redirect('/error');
+    }
+    res.render('posts/edit', { post });
+  } catch (err) {
+    console.log(err);
+    res.redirect('/posts');
+  }
+}
+
+async function update(req, res) {
+  try {
+    const {title, description, link, content} = req.body;
+    await Post.findByIdAndUpdate(req.params.id, {
+      title,
+      description,
+      link,
+      content
+    });
+    res.redirect(`/posts/${req.params.id}`);
+  } catch (err) {
+    console.log(err);
+    res.redirect('/posts');
+  }
+}
+
+async function deletePost(req, res) {
+  try {
+  const post = await Post.findOne({ '_id': req.params.id, 'user': req.user._id });
+  if (!post) return res.redirect('/posts');
+  await post.deleteOne();
+  res.redirect(`/posts`);
+  } catch(err) {
+    console.log(err);
+    res.redirect('/posts');
+  }
+}
 
 module.exports = {
     index,
     new: newPost,
-    create
+    create,
+    show,
+    edit,
+    update,
+    delete: deletePost
 }

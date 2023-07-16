@@ -7,9 +7,9 @@ const postSchema = new Schema({
     link: String,
     content: String,
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
     }
   }, {
     timestamps: true

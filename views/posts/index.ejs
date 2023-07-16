@@ -1,4 +1,6 @@
 <%- include('../partials/header') %>
+<a href="/posts/new" class="add-content">
+    ADD Content</a>
 <h2>
     <%= user.name %>
 </h2>
@@ -11,10 +13,8 @@
             <h4>
                 <%= post.description %>
             </h4>
-            <p>
-                <%= post.content %>
-            </p>
         </ul>
+        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
             <% }) %>
                 <% } else if (isLoggedIn) { %>
                     <h3>No posts yet, start uploading!</h3>
