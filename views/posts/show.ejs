@@ -2,38 +2,98 @@
     <nav>
         <a href="/posts">Go Back</a>
     </nav>
-    <div class="profile-container">
+
+    <div class="post-container">
         <h2>
             <%= user.name %>
         </h2>
-    </div>
-    <div class="post-container">
         <h3>
             <%= post.title %>
         </h3>
         <h4>
             <%= post.description %>
         </h4>
-        <h5>
-            <%= post.link %>
-        </h5>
+        <a href="<%= post.link %>" target="_blank"><%= post.link %></a>
         <p>
             <%= post.content %>
         </p>
-        <a href="/posts/<%= post._id %>/wishlist" id="wishlist-btn">
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="/posts/<%= post._id %>/wishlist" id="wishlist-btn">
             <% if (post.wishlist) { %>
                 &#9733;
                 <% } else { %>
                     &#9734;
                     <% } %>
-        </a>
+        </a></th>
+        </tr>
+        </thead>
+        </table>
 
 
-        <form action="/posts/<%= post._id %>/edit">
+       <th> <form action="/posts/<%= post._id %>/edit">
             <button id="edit-btn" type="submit">Edit</button>
         </form>
+    </th>
+    <th>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
             <button id="delete-btn" type="submit">DELETE</button>
         </form>
+    </th>
+
+    <br>
+        <% if (user) { %>
+            <label>Comment:</label>
+            <form action="/posts/<%= post._id %>/comments" method="POST">
+                <textarea name="content"></textarea>
+                <input id="comment-btn" type="submit" value="Add"></input>
+            </form>
+            <% } %>
+                <br></br>
+
+                <% if (post.comments.length) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Date</th>
+                                <th>Comment</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% post.comments.forEach(function(comment) { %>
+                                <tr>
+                                    <td class="comment-user">
+                                        <%= comment.userName %>
+                                    </td>
+                                    <td>
+                                        <%= comment.createdAt.toLocaleDateString() %>
+                                    </td>
+                                    <td>
+                                        <%= comment.content %>
+                                    </td>
+                                    <% if (user?._id.equals(comment.user)) { %>  
+                                        <td>
+                                            <form action="/comments/<%= comment._id %>/edit">
+                                                <button type="submit" id="cm-edit-btn">Edit</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                                <button type="submit" id="cm-delete-btn">DELETE</button>
+                                            </form>
+                                        </td>
+                                        <% } %>
+                                    <% }) %>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <h5>No Comments Yet!</h5>
+                        <% } %>
+
     </div>
     <%- include('../partials/footer') %>

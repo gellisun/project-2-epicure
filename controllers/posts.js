@@ -43,7 +43,7 @@ async function show(req, res) {
   try {
     const post = await Post.findById(req.params.id);
     
-    res.render('posts/show', {post});
+    res.render('posts/show', {post, user: req.user});
   } catch(err) {
     console.log(err);
     res.redirect('/posts');

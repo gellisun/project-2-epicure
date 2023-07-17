@@ -1,14 +1,12 @@
 <%- include('../partials/header') %>
-    <div class="profile-container">
-        <h2>
-            <%= user.name %>
-        </h2>
-    </div>
     <a href="/posts/new" class="add-content">
         ADD Content</a>
     <% if (isLoggedIn && hasPosts) { %>
         <% posts.forEach(post=> { %>
             <div class="posts-container">
+                <h3>
+                    <%= user.name %>
+                </h3>
                 <ul>
                     <li>
                         <h3>

@@ -87,7 +87,8 @@ li {
   text-decoration: none;
 }
 
-#edit-btn, #update-btn, #delete-btn {
+#edit-btn, #update-btn, #delete-btn, #comment-btn, #cm-edit-btn, #cm-submit-btn, #cm-delete-btn {
+  font-family: 'Pathway Extreme', sans-serif;
   background-color: #b2906f;
   color: white;
   padding: 8px 16px;
