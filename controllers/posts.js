@@ -42,6 +42,7 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     const post = await Post.findById(req.params.id);
+    
     res.render('posts/show', {post});
   } catch(err) {
     console.log(err);
@@ -92,6 +93,23 @@ async function deletePost(req, res) {
   }
 }
 
+async function toggleWishlist(req, res) {
+  try {
+      const postId = req.params.id;
+      const post = await Post.findById(postId);
+      if (!post) {
+          return res.redirect('/error');
+      }
+
+      post.wishlist = !post.wishlist; 
+      await post.save();
+      res.redirect(`/posts/${postId}`);
+  } catch (err) {
+      console.log(err);
+      res.redirect('/posts');
+  }
+}
+
 module.exports = {
     index,
     new: newPost,
@@ -99,5 +117,6 @@ module.exports = {
     show,
     edit,
     update,
-    delete: deletePost
+    delete: deletePost,
+    toggleWishlist
 }

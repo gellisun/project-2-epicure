@@ -26,4 +26,7 @@ router.put('/:id', postsCtrl.update);
 // DELETE /posts/:id
 router.delete('/:id', ensureLoggedIn, postsCtrl.delete);
 
+// GET /posts/:id/wishlist
+router.get('/:id/wishlist', ensureLoggedIn, postsCtrl.toggleWishlist);
+
 module.exports = router;

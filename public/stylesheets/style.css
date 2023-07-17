@@ -1,13 +1,27 @@
-* {
+ * {
   box-sizing: border-box;
 }
 
 body {
-  padding: 3vmin;
+  height: 100vh;
   font-family: 'Pathway Extreme', sans-serif;
   background-color: rgb(247, 212, 127);
+}
+
+nav {
+  margin-left: 5vmin;
+  margin-top: 2.5vmin;
+}
+
+.login img {
+  height: 3vmin;
+}
+
+.login {
+  font-size: 2vmin;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  height: 4vmin;
 }
 
 .login .logout .add-content {
@@ -16,23 +30,60 @@ body {
   align-items: center;
 }
 
-.login img {
-  height: 30px;
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 7.5vmin;
+  align-self: center;
+}
+
+.profile-container {
+  margin-left: 4vmin;
+}
+
+.add-content {
+  font-size: 3vmin;
+  align-self: center;
+  text-decoration: none;
+  background-color: #b2906f;
+  color: white;
+  padding: 1vmin 2vmin;
+  border-radius: 1vmin;
 }
 
 a, h1, h2, h3, h4, h5, p, label {
   color: #5f5d58;
 }
 
-h1 {
+li {
+  list-style-type: circle;
+  list-style-position:initial;
+}
+
+.posts-container {
+  margin: 4vmin;
+  padding: 2vmin;
+  width: 50%;
+  height: auto;
+  background-color: #fde2a9;
+  border-radius: 2vmin;
   align-self: center;
 }
 
-li {
-  list-style-type: circle;
+.post-container {
+  margin: 1vmin 4vmin 1vmin 4vmin;
+  padding: 2vmin;
+  width: 50%;
+  height: auto;
+  background-color: #fde2a9;
+  border-radius: 2vmin;
+  align-self: center;
 }
 
-#details-btn {
+#details-btn, #wishlist-btn {
   text-decoration: none;
 }
 
@@ -44,6 +95,48 @@ li {
   border-radius: 4px;
   cursor: pointer;
   margin: 5px;
+}
+
+/* Photo Gallery */
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5vmin;
+}
+
+#img-1 {
+  transform: rotate(5deg);
+}
+
+#img-2 {
+  transform: rotate(-1deg);
+}
+
+#img-3 {
+  transform: rotate(-6deg);
+}
+
+#img-4 {
+  transform: rotate(-2deg);
+}
+
+#img-5 {
+  transform: rotate(-3deg);
+}
+
+#img-6 {
+  transform: rotate(3deg);
+}
+
+#img-7 {
+  transform: rotate(1deg);
+}
+
+#img-8 {
+  transform: rotate(-4deg);
 }
 
 /* Form */
@@ -76,6 +169,7 @@ input[type=submit]:hover {
 }
 
 .form-container {
+  margin-top: 2vmin;
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -88,7 +182,7 @@ input[type=submit]:hover {
   }
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   body {
     padding: 10vmin;
     font-family: 'Pathway Extreme', sans-serif;
@@ -109,4 +203,4 @@ input[type=submit]:hover {
   .login img {
     height: 30px;
   }
-}
+} */

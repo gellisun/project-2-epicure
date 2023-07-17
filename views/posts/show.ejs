@@ -2,27 +2,38 @@
     <nav>
         <a href="/posts">Go Back</a>
     </nav>
-    <h2>
-        <%= user.name %>
-    </h2>
-    <h3>
-        <%= post.title %>
-    </h3>
-    <h4>
-        <%= post.description %>
-    </h4>
-    <h5>
-        <%= post.link %>
-    </h5>
-    <p>
-        <%= post.content %>
-    </p>
+    <div class="profile-container">
+        <h2>
+            <%= user.name %>
+        </h2>
+    </div>
+    <div class="post-container">
+        <h3>
+            <%= post.title %>
+        </h3>
+        <h4>
+            <%= post.description %>
+        </h4>
+        <h5>
+            <%= post.link %>
+        </h5>
+        <p>
+            <%= post.content %>
+        </p>
+        <a href="/posts/<%= post._id %>/wishlist" id="wishlist-btn">
+            <% if (post.wishlist) { %>
+                &#9733;
+                <% } else { %>
+                    &#9734;
+                    <% } %>
+        </a>
 
-    <form action="/posts/<%= post._id %>/edit">
-        <button id="edit-btn" type="submit">Edit</button>
-    </form>
-    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-        <button id="delete-btn" type="submit">DELETE</button>
-    </form>
 
+        <form action="/posts/<%= post._id %>/edit">
+            <button id="edit-btn" type="submit">Edit</button>
+        </form>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button id="delete-btn" type="submit">DELETE</button>
+        </form>
+    </div>
     <%- include('../partials/footer') %>

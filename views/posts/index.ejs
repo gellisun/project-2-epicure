@@ -1,25 +1,31 @@
 <%- include('../partials/header') %>
-<a href="/posts/new" class="add-content">
-    ADD Content</a>
-<h2>
-    <%= user.name %>
-</h2>
+    <div class="profile-container">
+        <h2>
+            <%= user.name %>
+        </h2>
+    </div>
+    <a href="/posts/new" class="add-content">
+        ADD Content</a>
     <% if (isLoggedIn && hasPosts) { %>
         <% posts.forEach(post=> { %>
-        <ul>
-            <li><h3>
-                <%= post.title %>
-            </h3></li>
-            <h4>
-                <%= post.description %>
-            </h4>
-        </ul>
-        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
-            <% }) %>
-                <% } else if (isLoggedIn) { %>
-                    <h3>No posts yet, start uploading!</h3>
-                    <% } else { %>
+            <div class="posts-container">
+                <ul>
+                    <li>
+                        <h3>
+                            <%= post.title %>
+                        </h3>
+                    </li>
+                    <h4>
+                        <%= post.description %>
+                    </h4>
+                </ul>
+                <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
+                <% }) %>
+                    <% } else if (isLoggedIn) { %>
+                        <h3>No posts yet, start uploading!</h3>
+                        <% } else { %>
                             <h3></h3>
-                                <% } %>
+                            <% } %>
+            </div>
 
-                                    <%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

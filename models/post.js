@@ -6,6 +6,10 @@ const postSchema = new Schema({
     description: { type: String, required: true},
     link: String,
     content: String,
+    wishlist: {
+      type: Boolean,
+      default: false
+    },
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
