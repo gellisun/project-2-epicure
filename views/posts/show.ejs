@@ -11,9 +11,9 @@
   <main>
   <h1>epicure</h1>
     <div class="post-container">
-        <h2>
-            <%= user.name %>
-        </h2>
+        <!-- <h2>
+            <%= user.name.toUpperCase() %>
+        </h2> -->
         <h3>
             <%= post.title %>
         </h3>
@@ -21,6 +21,8 @@
             <%= post.description %>
         </h4>
         <a href="<%= post.link %>" target="_blank"><%= post.link %></a>
+        <br></br>
+        <img src="<%= post.photo %>">
         <p>
             <%= post.content %>
         </p>

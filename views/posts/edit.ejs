@@ -19,8 +19,10 @@
     <input type="text" name="description" value="<%= post.description %>" required>
     <label for="link">Link:</label>
     <input type="text" name="link" value="<%= post.link %>">
+    <label for="photo">Photo:</label>
+    <input type="text" name="photo">
     <label for="content">Content:</label>
-    <textarea name="content" required><%= post.content %></textarea>
+    <textarea name="content"><%= post.content %></textarea>
     <button id="update-btn" type="submit">Update</button>
   </form>
 <%- include('../partials/footer') %>
