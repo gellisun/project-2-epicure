@@ -21,6 +21,7 @@ const postSchema = new Schema({
     title: { type: String, required: true},
     description: { type: String, required: true},
     link: String,
+    photo: String,
     content: String,
     wishlist: {
       type: Boolean,

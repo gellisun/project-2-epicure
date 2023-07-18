@@ -18,7 +18,7 @@ function newPost(req, res) {
 
 async function create(req, res) {
     try {
-      const { title, description, link, content, wishlist } = req.body;
+      const { title, description, link, photo, content, wishlist } = req.body;
       const user = req.user;
       if (!user) {
         return res.redirect('/login');
@@ -29,6 +29,7 @@ async function create(req, res) {
         title,
         description,
         link,
+        photo,
         content,
         wishlist: isWishlist,
         user: user._id
@@ -69,11 +70,12 @@ async function edit(req, res) {
 
 async function update(req, res) {
   try {
-    const {title, description, link, content} = req.body;
+    const {title, description, link, photo, content} = req.body;
     await Post.findByIdAndUpdate(req.params.id, {
       title,
       description,
       link,
+      photo,
       content
     });
     res.redirect(`/posts/${req.params.id}`);

@@ -1,21 +1,15 @@
- * {
+* {
   box-sizing: border-box;
 }
 
 body {
   height: 100vh;
-  font-family: 'Pathway Extreme', sans-serif;
-  background-image: url('/images/all-posts-bkgrd.jpeg');
+  font-family: FuturaPT, helvetica, sans-serif;
   background-color: #ffbb01;
 }
 
-nav {
-  margin-left: 5vmin;
-  margin-top: 2.5vmin;
-}
-
 .login > img {
-  height: 3vmin;
+  height: 2vmin;
 }
 
 .login {
@@ -23,26 +17,68 @@ nav {
   display: flex;
   align-items: center;
   height: 4vmin;
+  padding: 1vmin;
 }
 
-.login .logout .add-content {
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Radley', serif;
+  font-size: 6vmin;
+  text-align: center;
+}
+
+/* photo gallery */
+
+.img-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5vmin;
+}
+
+#img-1 {
+  transform: rotate(5deg);
+}
+
+#img-2 {
+  transform: rotate(-1deg);
+}
+
+#img-3 {
+  transform: rotate(-6deg);
+}
+
+#img-4 {
+  transform: rotate(-2deg);
+}
+
+#img-5 {
+  transform: rotate(-3deg);
+}
+
+#img-6 {
+  transform: rotate(3deg);
+}
+
+#img-7 {
+  transform: rotate(1deg);
+}
+
+#img-8 {
+  transform: rotate(-4deg);
+}
+
+.nav-style {
+  padding: 2vmin;
 }
 
 main {
   display: flex;
   flex-direction: column;
-}
-
-h1 {
-  font-size: 7.5vmin;
-  align-self: center;
-}
-
-.profile-container {
-  margin-left: 4vmin;
 }
 
 .add-content {
@@ -57,11 +93,6 @@ h1 {
 
 a, h1, h2, h3, h4, h5, p, label {
   color: #5f5d58;
-}
-
-li {
-  list-style-type: circle;
-  list-style-position:initial;
 }
 
 #posts-home {
@@ -117,49 +148,10 @@ li {
   height: 4vmin;
 }
 
-/* Photo Gallery */
 
-.img-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5vmin;
-}
+/* form */
 
-#img-1 {
-  transform: rotate(5deg);
-}
-
-#img-2 {
-  transform: rotate(-1deg);
-}
-
-#img-3 {
-  transform: rotate(-6deg);
-}
-
-#img-4 {
-  transform: rotate(-2deg);
-}
-
-#img-5 {
-  transform: rotate(-3deg);
-}
-
-#img-6 {
-  transform: rotate(3deg);
-}
-
-#img-7 {
-  transform: rotate(1deg);
-}
-
-#img-8 {
-  transform: rotate(-4deg);
-}
-
-/* Form */
+Form 
 
 input[type=text], textarea {
   width: 100%;
@@ -202,25 +194,3 @@ input[type=submit]:hover {
   }
 }
 
-/* @media (min-width: 600px) {
-  body {
-    padding: 10vmin;
-    font-family: 'Pathway Extreme', sans-serif;
-    background-color: rgb(247, 212, 127);
-  }
-  
-  a, h1, h2, h3, h4, p {
-    color: #5f5d58;
-  }
-  
-  .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 34px;
-  }
-  
-  .login img {
-    height: 30px;
-  }
-} */
