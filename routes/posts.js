@@ -6,13 +6,13 @@ const posts = require('../controllers/posts');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /posts
-router.get('/', postsCtrl.index);
+router.get('/', ensureLoggedIn, postsCtrl.index);
 
 // GET /posts/new
 router.get('/new', ensureLoggedIn, postsCtrl.new);
 
 // GET /posts/:id
-router.get('/:id', postsCtrl.show);
+router.get('/:id', ensureLoggedIn, postsCtrl.show);
 
 // GET /posts/:id/edit
 router.get('/:id/edit', ensureLoggedIn, postsCtrl.edit)
@@ -21,7 +21,7 @@ router.get('/:id/edit', ensureLoggedIn, postsCtrl.edit)
 router.post('/', ensureLoggedIn, postsCtrl.create);
 
 // PUT /posts/:id
-router.put('/:id', postsCtrl.update);
+router.put('/:id', ensureLoggedIn, postsCtrl.update);
 
 // DELETE /posts/:id
 router.delete('/:id', ensureLoggedIn, postsCtrl.delete);

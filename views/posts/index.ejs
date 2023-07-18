@@ -1,29 +1,30 @@
 <%- include('../partials/header') %>
-    <a href="/posts/new" class="add-content">
-        ADD Content</a>
+<a href="/posts/new" class="add-content">ADD Content</a>
+<section id="posts-home">
+  <div class="posts-container">
     <% if (isLoggedIn && hasPosts) { %>
-        <% posts.forEach(post=> { %>
-            <div class="posts-container">
-                <h3>
-                    <%= user.name %>
-                </h3>
-                <ul>
-                    <li>
-                        <h3>
-                            <%= post.title %>
-                        </h3>
-                    </li>
-                    <h4>
-                        <%= post.description %>
-                    </h4>
-                </ul>
-                <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
-                <% }) %>
-                    <% } else if (isLoggedIn) { %>
-                        <h3>No posts yet, start uploading!</h3>
-                        <% } else { %>
-                            <h3></h3>
-                            <% } %>
-            </div>
-
-            <%- include('../partials/footer') %>
+      <% posts.forEach(post => { %>
+        <h3><%= user.name.toUpperCase() %></h3>
+        <h4><%= post.title %></h4>
+        <h5><%= post.description %></h5>
+        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
+      <% }) %>
+    <% } else if (isLoggedIn) { %>
+      <h3>No posts yet, start uploading!</h3>
+    <% } %>
+  </div>
+  <div class="wishlist">
+    <h2>Wishlist</h2>
+    <% if (isLoggedIn && hasPosts) { %>
+      <% posts.forEach(post => { %>
+        <% if (post.wishlist === true) { %>
+          <h3><%= user.name.toUpperCase() %></h3>
+          <h4><%= post.title %></h4>
+          <h5><%= post.description %></h5>
+          <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </div>
+</section>
+<%- include('../partials/footer') %>

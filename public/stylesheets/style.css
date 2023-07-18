@@ -5,7 +5,8 @@
 body {
   height: 100vh;
   font-family: 'Pathway Extreme', sans-serif;
-  background-color: rgb(247, 212, 127);
+  background-image: url('/images/all-posts-bkgrd.jpeg');
+  background-color: #ffbb01;
 }
 
 nav {
@@ -13,7 +14,7 @@ nav {
   margin-top: 2.5vmin;
 }
 
-.login img {
+.login > img {
   height: 3vmin;
 }
 
@@ -63,14 +64,27 @@ li {
   list-style-position:initial;
 }
 
+#posts-home {
+  display: flex;
+}
+
 .posts-container {
   margin: 4vmin;
-  padding: 2vmin;
-  width: 50%;
+  padding: 1vmin;
+  width: 60%;
   height: auto;
-  background-color: #fde2a9;
-  border-radius: 2vmin;
+  background-color: #f9f0b5;
+  border-radius: 1vmin;
   align-self: center;
+}
+
+.wishlist {
+  margin: 4vmin;
+  padding: 1vmin;
+  width: 30%;
+  height: auto;
+  background-color: #febc8e;
+  border-radius: 1vmin;
 }
 
 .post-container {
@@ -78,7 +92,7 @@ li {
   padding: 2vmin;
   width: 50%;
   height: auto;
-  background-color: #fde2a9;
+  background-color: #f9f0b5;
   border-radius: 2vmin;
   align-self: center;
 }
@@ -96,6 +110,11 @@ li {
   border-radius: 4px;
   cursor: pointer;
   margin: 5px;
+}
+
+#avatar {
+  border-radius: 50%;
+  height: 4vmin;
 }
 
 /* Photo Gallery */

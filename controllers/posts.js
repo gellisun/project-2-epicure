@@ -18,17 +18,19 @@ function newPost(req, res) {
 
 async function create(req, res) {
     try {
-      const { title, description, link, content } = req.body;
+      const { title, description, link, content, wishlist } = req.body;
       const user = req.user;
       if (!user) {
         return res.redirect('/login');
       }
 
+      const isWishlist = wishlist === 'on';
       const newPost = new Post({
         title,
         description,
         link,
         content,
+        wishlist: isWishlist,
         user: user._id
       });
       await newPost.save();

@@ -56,6 +56,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>User</th>
                                 <th>Date</th>
                                 <th>Comment</th>
@@ -67,6 +68,9 @@
                             <% post.comments.forEach(function(comment) { %>
                                 <tr>
                                     <td class="comment-user">
+                                        <img id="avatar" src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
+                                        </td>
+                                        <td>
                                         <%= comment.userName %>
                                     </td>
                                     <td>
