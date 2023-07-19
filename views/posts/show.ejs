@@ -12,7 +12,7 @@
   <h1>epicure</h1>
     <div class="post-container">
         <h2 class="username">
-            <%= user.name.toUpperCase() %>
+            <%= post.user.name %>
         </h2>
         <h3>
             <%= post.title %>
@@ -40,7 +40,7 @@
         </thead>
         </table>
 
-
+<% if (isLoggedIn && isAuthor) { %>
        <th> <form action="/posts/<%= post._id %>/edit">
             <button id="edit-btn" type="submit">Edit</button>
         </form>
@@ -49,6 +49,7 @@
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
             <button id="delete-btn" type="submit">DELETE</button>
         </form>
+        <% } %>
     </th>
 
     <br>
@@ -59,7 +60,7 @@
                 <input id="comment-btn" type="submit" value="Add"></input>
             </form>
             <% } %>
-                <br></br>
+                <br>
 
                 <% if (post.comments.length) { %>
                     <table>
@@ -88,7 +89,7 @@
                                     <td>
                                         <%= comment.content %>
                                     </td>
-                                    <% if (user?._id.equals(comment.user)) { %>  
+                                    <% if (isLoggedIn && comment.user.equals(user._id)) { %>  
                                         <td>
                                             <form action="/comments/<%= comment._id %>/edit">
                                                 <button type="submit" id="cm-edit-btn">Edit</button>

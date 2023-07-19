@@ -17,7 +17,7 @@
       <% if (isLoggedIn && hasPosts) { posts.forEach(post=> { %>
       <div class="card">
         <div class="user-name">
-          <h3 class="username"><%= user.name %></h3>
+          <h3 class="username"><%= post.user.name %></h3>
         </div>
 
         <h4><%= post.title %></h4>

@@ -2,8 +2,9 @@ const Post = require('../models/post');
 
 async function index(req, res) {
     try {
-        const posts = await Post.find({});
-        const isLoggedIn= !!req.user;
+        const user = req.user;
+        const posts = await Post.find({}).populate('user').sort('-createdAt');
+        const isLoggedIn= !!user;
         const hasPosts = !!posts.length;
         res.render('posts/index', { posts, isLoggedIn, hasPosts });
     } catch (err) {
@@ -44,9 +45,16 @@ async function create(req, res) {
 
 async function show(req, res) {
   try {
-    const post = await Post.findById(req.params.id);
+    const postId = req.params.id;
+    const post = await Post.findById(postId).populate('user');
+    if (!post) {
+          return res.redirect('/error');
+        }
+    const user = req.user;
+    const isLoggedIn = !!user;
+    const isAuthor = post.user.equals(user._id);
     
-    res.render('posts/show', {post, user: req.user});
+    res.render('posts/show', {post, isLoggedIn, isAuthor});
   } catch(err) {
     console.log(err);
     res.redirect('/posts');
@@ -61,6 +69,9 @@ async function edit(req, res) {
       // For example, redirect to an error page or display an error message
       return res.redirect('/error');
     }
+    if (!post.user.equals(req.user._id)) {
+      return res.redirect('/error');
+    }
     res.render('posts/edit', { post });
   } catch (err) {
     console.log(err);
@@ -71,6 +82,11 @@ async function edit(req, res) {
 async function update(req, res) {
   try {
     const {title, description, link, photo, content} = req.body;
+    const post = await Post.findById(req.params.id);
+    if (!post.user.equals(req.user._id)) {
+      return res.redirect('/error');
+          }
+
     await Post.findByIdAndUpdate(req.params.id, {
       title,
       description,
