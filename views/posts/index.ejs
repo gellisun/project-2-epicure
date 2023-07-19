@@ -35,19 +35,12 @@
     </div>
     <div class="wishlist">
       <h2 id="wishlist-txt">Wishlist</h2>
-      <% if (isLoggedIn && hasPosts) { %> <% posts.forEach(post=> { %> <% if
-      (post.wishlist===true) { %>
-      <!-- <h3><%= user.name.toUpperCase() %></h3>  -->
+      <% if (isLoggedIn && wishlistPosts.length) { %> <% wishlistPosts.forEach(post=> { %>
       <div class="wishlist-post">
         <h4><%= post.title %></h4>
-
-        <!-- <h5><%= post.description %></h5>
-
-        <img src="<%= post.photo %>" /> -->
-
         <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E;</a>
       </div>
-      <% } %> <% }) %> <% } %>
+      <% }) %> <% } %> 
     </div>
   </div>
 </main>
