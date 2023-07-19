@@ -5,15 +5,15 @@
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
-        &nbsp;
+        &nbsp; | &nbsp;
         <a href="/posts">Go Back</a>
   </nav>
   <main>
   <h1>epicure</h1>
     <div class="post-container">
-        <!-- <h2>
+        <h2 class="username">
             <%= user.name.toUpperCase() %>
-        </h2> -->
+        </h2>
         <h3>
             <%= post.title %>
         </h3>
@@ -105,7 +105,7 @@
                         </tbody>
                     </table>
                     <% } else { %>
-                        <h5>No Comments Yet!</h5>
+                        <h3>No Comments Yet!</h3>
                         <% } %>
 
     </div>

@@ -1,36 +1,49 @@
 <%- include('../partials/header') %>
 <nav class="nav-style">
   <% if (user) { %>
-    <a href="/logout" class="logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
-      &nbsp;
-      <a href="/posts">Go Back</a>
-      
+  <a href="/logout" class="logout">LOG OUT</a>
+  <% } else { %>
+  <a href="/auth/google" class="login"
+    >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+  /></a>
+  <% } %> &nbsp; | &nbsp;
+  <a href="/posts">Go Back</a>
 </nav>
 <main>
-<h1>epicure</h1>
-<div class="form-container">
-<form id="new-form" action="/posts" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title" placeholder="Give a title..." required>
-  <label>Brief description:</label>
-  <input type="text" name="description" placeholder="Brief description..." required>
-  <label>Upload restaurant link here:</label>
-  <input type="text" name="link" placeholder="Add a link...">
-  <label>Blog it:</label>
-  <textarea type="text" name="content" placeholder="Write something..."></textarea>
-  <label>Photo:</label>
-  <input type="text" name="photo" id="photo">
-  <label>Wishlist?</label>
-  <input type="checkbox" name="wishlist" id="wishlist-chbx">
-  <input type="submit" value="Add Content">
-</form>
-</div>
+  <h1>epicure</h1>
+  <div class="form-container">
+    <form id="new-form" action="/posts" method="POST">
+      <label>Title:</label>
+      <input type="text" name="title" placeholder="Give a title..." required />
+      <label>Brief description:</label>
+      <input
+        type="text"
+        name="description"
+        placeholder="Brief description..."
+        required
+      />
+      <label>Upload restaurant link here:</label>
+      <input type="text" name="link" placeholder="Add a link..." />
+      <label>Blog it:</label>
+      <textarea
+        type="text"
+        name="content"
+        placeholder="Write something..."
+      ></textarea>
+      <label>Photo:</label>
+      <input
+        type="text"
+        name="photo"
+        id="photo"
+        placeholder="Example: https://i.imgur.com/SzMHDGu.jpg..."
+      />
+      <label>Wishlist?</label>
+      <input type="checkbox" name="wishlist" id="wishlist-chbx" />
+      <input type="submit" value="Add Content" />
+    </form>
+  </div>
 
-<p>
-  <%= errorMsg %>
-</p>
+  <p><%= errorMsg %></p>
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
+</main>

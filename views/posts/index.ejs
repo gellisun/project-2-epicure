@@ -1,41 +1,54 @@
 <%- include('../partials/header') %>
-<nav class="nav-style">
+<nav>
   <% if (user) { %>
-    <a href="/logout" class="logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
+  <a href="/logout" class="logout">LOG OUT</a>
+  <% } else { %>
+  <a href="/auth/google" class="login"
+    >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+  /></a>
+  <% } %>
 </nav>
+
 <main>
-<h1>epicure</h1>
-<a href="/posts/new" class="add-content">ADD Content</a>
-<section id="posts-home">
-  <div class="posts-container">
-    <% if (isLoggedIn && hasPosts) { %>
-      <% posts.forEach(post => { %>
-        <!-- <h3><%= user.name.toUpperCase() %></h3> -->
+  <h1>epicure</h1>
+  <a href="/posts/new" class="add-content">ADD Content</a>
+  <div class="wrapper">
+    <div class="posts-container">
+      <% if (isLoggedIn && hasPosts) { posts.forEach(post=> { %>
+      <div class="card">
+        <div class="user-name">
+          <h3 class="username"><%= user.name %></h3>
+        </div>
+
         <h4><%= post.title %></h4>
-        <h5><%= post.description %></h5>
-        <img src="<%= post.photo %>">
-        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
-      <% }) %>
-    <% } else if (isLoggedIn) { %>
+
+        <p><%= post.description %></p>
+
+        <img src="<%= post.photo %>" />
+
+        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E;</a>
+      </div>
+
+      <% }) } else if (isLoggedIn) { %>
       <h3>No posts yet, start uploading!</h3>
-    <% } %>
+      <% } %>
+    </div>
+    <div class="wishlist">
+      <h2 id="wishlist-txt">Wishlist</h2>
+      <% if (isLoggedIn && hasPosts) { %> <% posts.forEach(post=> { %> <% if
+      (post.wishlist===true) { %>
+      <!-- <h3><%= user.name.toUpperCase() %></h3>  -->
+      <div class="wishlist-post">
+        <h4><%= post.title %></h4>
+
+        <!-- <h5><%= post.description %></h5>
+
+        <img src="<%= post.photo %>" /> -->
+
+        <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E;</a>
+      </div>
+      <% } %> <% }) %> <% } %>
+    </div>
   </div>
-  <div class="wishlist">
-    <h2>Wishlist</h2>
-    <% if (isLoggedIn && hasPosts) { %>
-      <% posts.forEach(post => { %>
-        <% if (post.wishlist === true) { %>
-          <!-- <h3><%= user.name.toUpperCase() %></h3> -->
-          <h4><%= post.title %></h4>
-          <h5><%= post.description %></h5>
-          <img src="<%= post.photo %>">
-          <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E</a>
-        <% } %>
-      <% }) %>
-    <% } %>
-  </div>
-</section>
+</main>
 <%- include('../partials/footer') %>
