@@ -1,5 +1,7 @@
 # Project 2 - Epicure
 
+![HomePage](/public/images/README-photos/homepage.png "HomePage")
+
 ## Description
 
 <p>This is my second solo project on the General Assembly Software Engineering Immersive. Unit 2 was all about learning to build a full-stack application with Node/Express/MongoDB from the ground up.</p>
@@ -39,11 +41,11 @@ I planned to have a login page, a page that would display all posts and differen
 - to add delete or edit a post<br>
 - to add delete or edit a comment
 
-![Wireframe 1](/public/images/README-photos/Wireframe-01.png "Wireframe 1")
+![Wireframe 1](/public/images/README-photos/Wireframe01.png "Wireframe 1")
 
-![Wireframe 2](/public/images/README-photos/Wireframe-02.png "Wireframe 2")
+![Wireframe 2](/public/images/README-photos/Wireframe02.png "Wireframe 2")
 
-![Wireframe 3](/public/images/README-photos/Wireframe-03.png "Wireframe 3")
+![Wireframe 3](/public/images/README-photos/Wireframe03.png "Wireframe 3")
 
 ## Build/Code Process
 
