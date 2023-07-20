@@ -73,8 +73,6 @@ async function edit(req, res) {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
-      // Handle the case when the post is not found
-      // For example, redirect to an error page or display an error message
       return res.redirect("/error");
     }
     if (!post.user.equals(req.user._id)) {
