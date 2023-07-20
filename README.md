@@ -116,13 +116,20 @@ async function index(req, res) {
   all the posts (created by him/her and created by other users) but can only see in the wishlist section the posts that were checked as wishlist by him/herself. Unfortunately the time run out<br>
 before I could be able to add the possibility for the user to add to the wishlist other users' posts - functionality I aim to implement after presentation day - at the moment in his/her wishlist can only go the posts marked by him/her.</p>
 
+![All Posts](/public/images/README-photos/posts-page.png "All Posts")
+
 ## Challenges
 <p>The biggest challenge for me was the styling. I tried to make it responsive but I run out of time while focusing on functionalities to add on top of my MVP.<br>
 Also, I spent a whole day going through the documentation for different ways I could implement the add photo functionality.<br>
 At the moment the photos can only be added through a link, what I would like for the future is to implement an API that allows to upload photos from the user's device.</p>
 
 ## Wins
-<p>The biggest win was for me the clarity I had about the processes to implement User-Centric CRUD. Thanks to repetition plus the course material I can say I am very confident in how to approach this process. In by Monday during project week I already had all the CRUD implemented and I am very proud of this achievement.</p>
+<p>The biggest win was for me the clarity I had about the processes to implement User-Centric CRUD. Thanks to repetition plus the course material I can say I am very confident in how to approach this process. In by Monday during project week I already had all the CRUD implemented and I am very proud of this achievement.<br>
+I was happy to successfully manage to give different availables actions to the user on the posts or comments. Each user can only edit or delete his/her own post, edit or delete his/her own comment.</p>
+
+![User 1 View](/public/images/README-photos/user-a-view.png "User 1 view")
+
+![User 2 View](/public/images/README-photos/user-b-view.png "User 2 view")
 
 ## Key Learnings/Takeaways
 <p>One thing I learnt when working on this project is how important it is to have a very well structured plan. We are at week six of this bootcamp and I still find my project process being too unstructured.<br>
