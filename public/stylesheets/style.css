@@ -16,11 +16,11 @@ body {
 }
 
 .login > img {
-  height: 2vmin;
+  height: 3vmin;
 }
 
-.login {
-  font-size: 1rem;
+.login, .logout {
+  font-size: 2rem;
   display: flex;
   align-items: center;
   height: 4vmin;
@@ -40,6 +40,13 @@ h1 {
   margin: 1vmin;
 }
 
+.welcome-msg {
+  font-family: "Radley", serif;
+  font-weight: normal;
+  text-align: center;
+  margin: 3vmin;
+}
+
 /* photo gallery */
 
 .img-container {
@@ -48,6 +55,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5vmin;
+  margin-top: 1vmin;
 }
 
 #img-1 {
