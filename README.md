@@ -27,11 +27,11 @@
 <p> My app had to be a platform where, as a user I could pin all in one place everything related to food: restaurants I have been to and that I would like to go back to o recommend if asked, recipes I created myself or that I found and tried etc… Ideally I would have wanted it to be a social platform where to follow people and favourite their posts based on personal likings.<br>
 The ERD is the overall idea I had during planning of the data that would be stored in the database.</p>
 
-![ERD](/images/README-photos/ERD.png "ERD")
+![ERD](/public/images/README-photos/ERD.png "ERD")
 
 <p>Trello is the tool I used to manage every step of the project</p>
 
-![Trello Board](/images/README-photos/trello.png "Trello board")
+![Trello Board](/public/images/README-photos/trello.png "Trello board")
 
 <p>As it is shown in the wireframe, the idea was to make the app responsive so I tried my best to achieve that.<br>
 I planned to have a login page, a page that would display all posts and different pages that, as a user, I could go to if I wanted:
@@ -39,11 +39,11 @@ I planned to have a login page, a page that would display all posts and differen
 - to add delete or edit a post<br>
 - to add delete or edit a comment
 
-![Wireframe 1](/images/README-photos/Wireframe-01.png "Wireframe 1")
+![Wireframe 1](/public/images/README-photos/Wireframe-01.png "Wireframe 1")
 
-![Wireframe 2](/images/README-photos/Wireframe-02.png "Wireframe 2")
+![Wireframe 2](/public/images/README-photos/Wireframe-02.png "Wireframe 2")
 
-![Wireframe 3](/images/README-photos/Wireframe-03.png "Wireframe 3")
+![Wireframe 3](/public/images/README-photos/Wireframe-03.png "Wireframe 3")
 
 ## Build/Code Process
 
