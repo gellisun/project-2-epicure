@@ -2,7 +2,7 @@
 
 ![HomePage](/public/images/README-photos/homepage.png "HomePage")
 
-Launch Epicure: [epicure](https://vast-brook-71035-0d5000787e44.herokuapp.com").
+Launch the app: **[epicure](https://vast-brook-71035-0d5000787e44.herokuapp.com)** :fork_and_knife:
 
 
 ## Description
