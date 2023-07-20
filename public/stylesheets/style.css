@@ -142,6 +142,10 @@ p {
   border-radius: 1vmin;
 }
 
+.post-photo {
+  width: 20%;
+}
+
 .username {
   font-family: "Permanent Marker", cursive;
 }
