@@ -43,6 +43,7 @@ h1 {
 .welcome-msg {
   font-family: "Radley", serif;
   font-weight: normal;
+  font-size: 4vmin;
   text-align: center;
   margin: 3vmin;
 }
