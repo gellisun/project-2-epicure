@@ -1,32 +1,32 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const postsCtrl = require('../controllers/posts');
-const posts = require('../controllers/posts');
-const ensureLoggedIn = require('../config/ensureLoggedIn');
+const postsCtrl = require("../controllers/posts");
+const posts = require("../controllers/posts");
+const ensureLoggedIn = require("../config/ensureLoggedIn");
 
 // GET /posts
-router.get('/', ensureLoggedIn, postsCtrl.index);
+router.get("/", ensureLoggedIn, postsCtrl.index);
 
 // GET /posts/new
-router.get('/new', ensureLoggedIn, postsCtrl.new);
+router.get("/new", ensureLoggedIn, postsCtrl.new);
 
 // GET /posts/:id
-router.get('/:id', ensureLoggedIn, postsCtrl.show);
+router.get("/:id", ensureLoggedIn, postsCtrl.show);
 
 // GET /posts/:id/edit
-router.get('/:id/edit', ensureLoggedIn, postsCtrl.edit)
+router.get("/:id/edit", ensureLoggedIn, postsCtrl.edit);
 
 // POST /posts
-router.post('/', ensureLoggedIn, postsCtrl.create);
+router.post("/", ensureLoggedIn, postsCtrl.create);
 
 // PUT /posts/:id
-router.put('/:id', ensureLoggedIn, postsCtrl.update);
+router.put("/:id", ensureLoggedIn, postsCtrl.update);
 
 // DELETE /posts/:id
-router.delete('/:id', ensureLoggedIn, postsCtrl.delete);
+router.delete("/:id", ensureLoggedIn, postsCtrl.delete);
 
 // GET /posts/:id/wishlist
-router.get('/:id/wishlist', ensureLoggedIn, postsCtrl.toggleWishlist);
+router.get("/:id/wishlist", ensureLoggedIn, postsCtrl.toggleWishlist);
 
 module.exports = router;

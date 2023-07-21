@@ -11,18 +11,12 @@ body {
   background-color: #F8DA7D;
 }
 
-.nav-items {
-  margin: 2vmin, 0, 0, 2vmin;
-}
-
 .login > img {
   height: 3vmin;
 }
 
 .login, .logout {
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
+  font-size: 1.5rem;
   height: 4vmin;
   padding: 1vmin;
 }
@@ -30,12 +24,12 @@ body {
 a {
   text-decoration: none;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 h1 {
   font-family: "Radley", serif;
-  font-size: 6vmin;
+  font-size: 6rem;
   text-align: center;
   margin: 1vmin;
 }
@@ -157,6 +151,7 @@ p {
 
 .username {
   font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
 }
 
 .wishlist {
@@ -177,6 +172,7 @@ p {
 #wishlist-txt {
   font-family: "Permanent Marker", cursive;
   text-align: center;
+  font-size: 2.5rem;
 }
 
 #details-btn,
@@ -185,6 +181,30 @@ p {
 }
 
 /* post details page */
+
+#go-back {
+  font-size: 1.5rem;
+}
+
+#post-link {
+  font-size: 1rem;
+}
+
+#title {
+  font-size: 2rem;
+}
+
+#description {
+  font-size: 1.5rem;
+}
+
+#content {
+  font-size: 1.3rem;
+}
+
+#comment {
+  font-size: 1.3rem;
+}
 
 .post-container {
   margin: 1vmin 4vmin 1vmin 4vmin;

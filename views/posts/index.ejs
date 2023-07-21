@@ -20,9 +20,9 @@
           <h3 class="username"><%= post.user.name %></h3>
         </div>
 
-        <h4><%= post.title %></h4>
+        <h4 id="title"><%= post.title %></h4>
 
-        <p><%= post.description %></p>
+        <p id="description"><%= post.description %></p>
 
         <img class="post-photo" src="<%= post.photo %>" />
 
@@ -35,12 +35,13 @@
     </div>
     <div class="wishlist">
       <h2 id="wishlist-txt">Wishlist</h2>
-      <% if (isLoggedIn && wishlistPosts.length) { %> <% wishlistPosts.forEach(post=> { %>
+      <% if (isLoggedIn && wishlistPosts.length) { %> <%
+      wishlistPosts.forEach(post=> { %>
       <div class="wishlist-post">
-        <h4><%= post.title %></h4>
+        <h4 id="title"><%= post.title %></h4>
         <a id="details-btn" href="/posts/<%= post._id %>">&#x1F50E;</a>
       </div>
-      <% }) %> <% } %> 
+      <% }) %> <% } %>
     </div>
   </div>
 </main>

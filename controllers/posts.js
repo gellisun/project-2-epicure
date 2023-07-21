@@ -120,7 +120,7 @@ async function deletePost(req, res) {
 }
 
 async function toggleWishlist(req, res) {
-  console.log('hello');
+  console.log("hello");
   try {
     const postId = req.params.id;
     const post = await Post.findById(postId);

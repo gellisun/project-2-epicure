@@ -1,23 +1,63 @@
 <%- include('./partials/header') %>
 <nav>
-    <% if (user) { %>
-      <a href="/logout" class="logout">LOG OUT</a>
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
-      </nav>
-  <h1>epicure</h1>
-  <main>
-    <h2 class="welcome-msg">Welcome to the app that lets you pin all your food-related interests!</h2>
-<div class="img-container">
-    <img src="images/avo-toast.jpg" class="img-fluid" id="img-1" alt="avo-toast photo">
-    <img src="images/fish.jpg" class="img-fluid" id="img-2" alt="fish photo">
-    <img src="images/french-toast.jpg" class="img-fluid" id="img-3" alt="french-toast photo">
-    <img src="images/icecream.jpg" class="img-fluid" id="img-4" alt="icecream photo">
-    <img src="images/pancakes.jpg" class="img-fluid" id="img-5" alt="pancakes photo">
-    <img src="images/salad.jpg" class="img-fluid" id="img-6" alt="salad photo">
-    <img src="images/salmon.jpg" class="img-fluid" id="img-7" alt="salmon photo">
-    <img src="images/skewers.jpg" class="img-fluid" id="img-8" alt="skewers photo">
-</div>
+  <% if (user) { %>
+  <a href="/logout" class="logout">LOG OUT</a>
+  <% } else { %>
+  <a href="/auth/google" class="login"
+    >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+  /></a>
+  <% } %>
+</nav>
+<h1>epicure</h1>
+<main>
+  <h2 class="welcome-msg">
+    Welcome to the app that lets you pin all your food-related interests!
+  </h2>
+  <div class="img-container">
+    <img
+      src="images/avo-toast.jpg"
+      class="img-fluid"
+      id="img-1"
+      alt="avo-toast photo"
+    />
+    <img src="images/fish.jpg" class="img-fluid" id="img-2" alt="fish photo" />
+    <img
+      src="images/french-toast.jpg"
+      class="img-fluid"
+      id="img-3"
+      alt="french-toast photo"
+    />
+    <img
+      src="images/icecream.jpg"
+      class="img-fluid"
+      id="img-4"
+      alt="icecream photo"
+    />
+    <img
+      src="images/pancakes.jpg"
+      class="img-fluid"
+      id="img-5"
+      alt="pancakes photo"
+    />
+    <img
+      src="images/salad.jpg"
+      class="img-fluid"
+      id="img-6"
+      alt="salad photo"
+    />
+    <img
+      src="images/salmon.jpg"
+      class="img-fluid"
+      id="img-7"
+      alt="salmon photo"
+    />
+    <img
+      src="images/skewers.jpg"
+      class="img-fluid"
+      id="img-8"
+      alt="skewers photo"
+    />
+  </div>
 
-<%- include('./partials/footer') %>
+  <%- include('./partials/footer') %>
+</main>

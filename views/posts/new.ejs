@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
-<nav class="nav-style">
+<nav>
   <% if (user) { %>
   <a href="/logout" class="logout">LOG OUT</a>
   <% } else { %>
   <a href="/auth/google" class="login"
     >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
   /></a>
-  <% } %> 
-  <a href="/posts">Go Back</a>
+  <% } %> &nbsp; | &nbsp;
+  <a id="go-back" href="/posts">Go Back</a>
 </nav>
 <main>
   <h1>epicure</h1>

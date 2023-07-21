@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
-<nav class="nav-style">
+<nav>
     <% if (user) { %>
       <a href="/logout" class="logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
         &nbsp; | &nbsp;
-        <a href="/posts">Go Back</a>
+        <a id="go-back" href="/posts">Go Back</a>
   </nav>
   <main>
   <h1>epicure</h1>
@@ -14,16 +14,16 @@
         <h2 class="username">
             <%= post.user.name %>
         </h2>
-        <h3>
+        <h3 id="title">
             <%= post.title %>
         </h3>
-        <h4>
+        <h4 id="description">
             <%= post.description %>
         </h4>
-        <a href="<%= post.link %>" target="_blank"><%= post.link %></a>
+        <a id="post-link" href="<%= post.link %>" target="_blank"><%= post.link %></a>
         <br></br>
         <img class="post-photo" src="<%= post.photo %>">
-        <p>
+        <p id="content">
             <%= post.content %>
         </p>
         <table>
@@ -80,13 +80,13 @@
                                     <td class="comment-user">
                                         <img id="avatar" src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
                                         </td>
-                                        <td>
+                                        <td id="comment">
                                         <%= comment.userName %>
                                     </td>
-                                    <td>
+                                    <td id="comment">
                                         <%= comment.createdAt.toLocaleDateString() %>
                                     </td>
-                                    <td>
+                                    <td id="comment">
                                         <%= comment.content %>
                                     </td>
                                     <% if (isLoggedIn && comment.user.equals(user._id)) { %>  
@@ -106,7 +106,7 @@
                         </tbody>
                     </table>
                     <% } else { %>
-                        <h3>No Comments Yet!</h3>
+                        <h3 id="comment">No Comments Yet!</h3>
                         <% } %>
 
     </div>

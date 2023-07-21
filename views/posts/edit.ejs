@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<nav class="nav-style">
+<nav>
   <% if (user) { %>
   <a href="/logout" class="logout">LOG OUT</a>
   <% } else { %>
@@ -7,7 +7,7 @@
     >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
   /></a>
   <% } %> &nbsp;
-  <a href="/posts/<%= post._id %>">Go Back</a>
+  <a id="go-back" href="/posts/<%= post._id %>">Go Back</a>
 </nav>
 <main>
   <h1>epicure</h1>
