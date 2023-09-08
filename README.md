@@ -7,7 +7,7 @@ Launch the app: **[epicure](https://vast-brook-71035-0d5000787e44.herokuapp.com)
 
 ## Description
 
-<p>This is my second solo project on the General Assembly Software Engineering Immersive. Unit 2 was all about learning to build a full-stack application with Node/Express/MongoDB from the ground up.</p>
+<p>This was my second solo project on the General Assembly Software Engineering Immersive. Unit 2 was all about learning to build a full-stack application with Node/Express/MongoDB from the ground up, and once again I had seven days to deliver this project.</p>
 
 ## Technologies Used
 
@@ -114,12 +114,12 @@ async function index(req, res) {
   }
 }
 ```
-<p>It has a functionality that I managed to implement which is the fact that each user that logs in has a different view, the logged in user can see all the posts (created by him/her and created by other users) but can only see in the wishlist section the posts that were checked as wishlist by him/herself. Unfortunately the time run out before I could be able to add the possibility for the user to add to the wishlist other users' posts - functionality I aim to implement after presentation day - at the moment in his/her wishlist can only go the posts marked by him/her.</p>
+<p>It has a functionality that I managed to implement which is the fact that each user that logs in has a different view, the logged in user can see all the posts (created by him/her and created by other users) but can only see in the wishlist section the posts that were checked as wishlist by him/herself. Unfortunately the time ran out before I was able to add the possibility for the user to add to the wishlist other users' posts - functionality I aim to implement after presentation day - at the moment in his/her wishlist only the posts marked by him/her can be added.</p>
 
 ![All Posts](/public/images/README-photos/posts-page.png "All Posts")
 
 ## Challenges
-<p>The biggest challenge for me was the styling. I tried to make it responsive but I run out of time while focusing on functionalities to add on top of my MVP. Also, I spent a whole day going through the documentation for different ways I could implement the add photo functionality. At the moment the photos can only be added through a link, what I would like for the future is to implement an API that allows to upload photos from the user's device.</p>
+<p>The biggest challenge for me was the styling. I tried to make it responsive but I ran out of time while focusing on functionalities to add on top of my MVP. Also, I spent a whole day going through the documentation for different ways I could implement the add photo functionality. At the moment the photos can only be added through a link, what I would like for the future is to implement an API that allows uploading photos from the user's device.</p>
 
 ## Wins
 <p>The biggest win was for me the clarity I had about the processes to implement User-Centric CRUD. Thanks to repetition plus the course material I can say I am very confident in how to approach this process. By Monday during project week I already had all the CRUD implemented and I am very proud of this achievement.<br>
@@ -136,6 +136,6 @@ Finally, I learnt that taking a leap in doing something never done before requir
 ## Future Improvements
 <p>Some were already mentioned but in short:</p>
 
-- add the possiblity for the logged in user to put other users' posts in their wishlist
+- add the possibility for the logged in user to put other users' posts in their wishlist
 - make the application responsive with media queries
 - give the application the added value of being a social platform where people can follow each other
